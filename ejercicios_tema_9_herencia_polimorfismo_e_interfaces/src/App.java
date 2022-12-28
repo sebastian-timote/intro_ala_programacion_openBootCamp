@@ -1,26 +1,28 @@
 public class App {
+    //POLIMORFISMO - CUANDO UNA CLASE HIJA IMPLEMENTA UNA FUNCION DEL PADRE PERO HACE ALGO DISTINTO
+    //en el ejemplo vamos a implementar dos clases con el mismo nombre una en el padre y otra en el hijo
+    //al momento de crear el objeto o instaciarla, si hay una  funcion en la clase hija con el mismo nombre
+    //de una funcion en la clase padre la funcion de la clase hija sustituira la funcion de la clase padre
+    //esto es el polimorfismo
     public static void main(String[] args) throws Exception {
         
-        // Vehiculo myVehiculo = new Vehiculo();
-        // myVehiculo.setSonido("BRRRrrrr");
-        // System.out.println(myVehiculo.getsonido());
+        Coche myCoche = new Coche();
+        myCoche.diHola();
         
     }
 }
 class Vehiculo {
-    int velocidadMaxima;
-    public Vehiculo(){//constructor
-        System.out.println("estoy en el constructor de vehiculo");
+    
+    public void diHola() {
+        System.out.println("HOLA!!");
+    }
+}
+class Coche extends Vehiculo{
+//si comentamos la funcion toma el dato de la funcion en la clase del padre
+    public void diHola() {
+       System.out.println("soy un coche!!");
     }
 }
 
-class Motor {
-    String tipoMotor;
-    public Motor() { 
-        System.out.println("estoy en el constructor de Motor");
-    }
-}
 
-class Coche extends Vehiculo, Motor {//herencia multiple - cuando una clase hereda  o tiene dos padres
-//a la fecha java ya no permite herencia multiple para evitar: - la ambiguedad del codigo - dar mas simplicidad a java - consideraron que la herencia multiple causa mas problemas que los que resolvia.
-}
+
