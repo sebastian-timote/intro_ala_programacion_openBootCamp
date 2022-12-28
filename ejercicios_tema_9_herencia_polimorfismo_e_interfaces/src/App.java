@@ -1,13 +1,15 @@
 public class App {
     //POLIMORFISMO - CUANDO UNA CLASE HIJA IMPLEMENTA UNA FUNCION DEL PADRE PERO HACE ALGO DISTINTO
-    //en el ejemplo vamos a implementar dos clases con el mismo nombre una en el padre y otra en el hijo
-    //al momento de crear el objeto o instaciarla, si hay una  funcion en la clase hija con el mismo nombre
-    //de una funcion en la clase padre la funcion de la clase hija sustituira la funcion de la clase padre
-    //esto es el polimorfismo
+    //otro ejemplo polimorfismo podemos ver la funcion sumaNumeros que es polimorfica ya que se llama igual
+    //pero se diferencia del dato que se le pase, si se lepasan datos incorrectos arrojara error
     public static void main(String[] args) throws Exception {
         
         Coche myCoche = new Coche();
-        myCoche.diHola();
+        //System.out.println(myCoche.sumaNumeros(8, 1));
+        //System.out.println(myCoche.sumaNumeros((float)8, (float)1));
+        myCoche.sumaNumeros(2.3, 5.2);
+
+
         
     }
 }
@@ -18,11 +20,24 @@ class Vehiculo {
     }
 }
 class Coche extends Vehiculo{
-//si comentamos la funcion toma el dato de la funcion en la clase del padre
     public void diHola() {
        System.out.println("soy un coche!!");
     }
+
+    public int sumaNumeros(int a, int b) {
+        System.out.println("soy el sumanumeros de enteros");
+        return a + b;
+    }
+    public Float sumaNumeros(Float a, Float b) {
+        System.out.println("soy el sumanumeros de float");
+        return a + b * (float)9.2;
+    }
+    public void sumaNumeros(Double a, Double b) {
+        System.out.println("soy el sumanumeros de double");
+        System.out.println("el resultado es: " + (a + b));
+    }
 }
+
 
 
 
