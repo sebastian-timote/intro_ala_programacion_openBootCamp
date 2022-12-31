@@ -1,20 +1,18 @@
 public class App {
-    //ejemplo paso por referencia
-    //en el paso por ref creamos punteros en java su nombre es crear objeto o instaciar
+    //ejemplo recursividad
+    //es una funcion que se autoinvoca o se invoca asi misma
 
     public static void main(String[] args) throws Exception {
-        
-        Coche myCoche = new Coche(); //creamos un puntero una ref de memoria
-        cocheChanger(myCoche);
-        cocheChanger(myCoche);
-
-        System.out.println(myCoche.velocidad);
-
-
+       factorial(8); 
     }
-    public static int cocheChanger(Coche coche) {//nos referimos a un objeto coche
-        return coche.velocidad += 50; 
-    } 
+    public static int factorial(int numero) {
+        int resultado;
+        if (numero == 1) {
+            return 1;
+        }
+        resultado = factorial(numero - 1) * numero;
+        return resultado;
+    }
     
 }
 
