@@ -1,18 +1,24 @@
 public class App {
+    //ejemplo paso por valor
+    //al pasar variables por valor las variables de la clase principal se copian en los parametros 
+    //de la funcion creando nuevos espacios de memoria y ocupando mas recursos es su principal desventaja
+    //si tenemos una aplicacion pequeña esto no se va a notar mucho pero mientra vaya creciendo la app 
+    //nos podria afectar
     public static void main(String[] args) throws Exception {
-        Coche myCoche = new Coche();
-        Moto myMoto = new Moto();
-        ejecutaAcelerar(myMoto);
-        ejecutaAcelerar(myCoche);
+        var valA = 15;// int = 32bits, = 4bytes
+        var valB = 10;// int = 32bits, = 4bytes
 
+        suma(valA, valB);
+
+        System.out.println(valA);
+        System.out.println(valB);
 
 
     }
-    //el parametro que le pase tiene q implementar la interface Vehiculo
-    //es llamada graper un funcion que se ejecuta si se le pasa un objeto que satisfaga la interface Vehiculo
-    public static void ejecutaAcelerar(Vehiculo vehiculo) {
-        vehiculo.acelerar(15);
+    public static int suma(int a , int b) {
+        return a + b ;
     }
+    
 }
 
 interface Vehiculo {
