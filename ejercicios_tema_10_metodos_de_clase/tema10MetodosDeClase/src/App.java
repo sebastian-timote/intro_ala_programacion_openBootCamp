@@ -3,15 +3,15 @@ public class App {
     //es una funcion que se autoinvoca o se invoca asi misma
 
     public static void main(String[] args) throws Exception {
-       factorial(8); 
+       suma(10, 20); 
     }
-    public static int factorial(int numero) {
-        int resultado;
-        if (numero == 1) {
-            return 1;
+    public static void suma(int a, int b) {
+        var temp = a + b ;
+        System.out.println("A vale " + a + "B vale " + b + "temp vale " + temp);
+        if (b >= 90) {//funcion que saca de la recursividad
+            return;
         }
-        resultado = factorial(numero - 1) * numero;
-        return resultado;
+        suma(a, temp);
     }
     
 }
